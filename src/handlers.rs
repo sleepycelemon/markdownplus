@@ -17,4 +17,22 @@ pub fn basic_text_handler(token: &tokens::Token, chars: &mut Chars, output: &mut
     }
 }
 
+#[cfg(test)]
+mod tests {
+    use crate::tokens;
 
+    #[test]
+    fn handles_heading() {
+        let want = "<h1>hello!</h1>\n";
+
+        let mut got = String::new();
+
+        super::basic_text_handler(
+            &tokens::HEADING_ONE_TOKEN,
+            &mut "hello!\n".chars(),
+            &mut got,
+        );
+
+        assert_eq!(got, want);
+    }
+}

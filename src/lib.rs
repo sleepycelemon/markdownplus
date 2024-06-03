@@ -19,7 +19,7 @@ mod tests {
 
     #[test]
     fn it_works() {
-        let input = "#hello! _what's up_\n *DAMN BRO*";
+        let input = "#hello! _what's up_\n*DAMN BRO*";
         let want = "<h1>hello! <em>what's up</em></h1>\n<b>DAMN BRO</b>";
 
         let got = parse(input);
